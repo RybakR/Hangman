@@ -159,6 +159,7 @@ f)       Wygrana:
 *Request:*
 
  `'WISIELEC\r\nSESSIONID: ' + myID + '\r\nWANTNEXT\r\nVALUE: ' + nextgame + '\r\n\r\n'`
+ 
 *Response:*
 
 a)  `'WISIELEC\r\n401 Not Authoritated\r\n\r\n'`
