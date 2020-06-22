@@ -12,14 +12,12 @@ formatter = logging.Formatter("%(asctime)s;%(levelname)s;%(message)s")
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
-
 #table for users
 users_table = []
 #table for rooms
 room_table = []
 #table for games
 game_table = []
-
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 #s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0)
@@ -54,6 +52,7 @@ def unmask_key(key, masked_key, letter):
 
     masked_key = ''.join(masked_key)
     result = (masked_key, correct_letter)
+
     return result
 
 class Game:

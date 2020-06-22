@@ -2,16 +2,14 @@
 import socket
 import ssl
 import sys
+
 myID = ''
-
 server_ip = sys.argv[1]
-
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #IPv4
 #s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0) #IPv6
+
 context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
 context.verify_mode = ssl.CERT_REQUIRED
-
-
 context.load_cert_chain(certfile='client.crt', keyfile='client.key', password='andrzejkarwoski')
 context.load_verify_locations(cafile='server.crt')
 ss = context.wrap_socket(s, server_hostname=server_ip)
